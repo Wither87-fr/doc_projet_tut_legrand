@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: ChartConfigBuilder.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: ChartConfigBuilder.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Classe de création de configuration
+ * 
+ * Classe permettant de créer unne configuration chartJS de manière plus lisible
+ * @author Alexis Beyrand
+ */
+class ChartConfigBuilder {
+    config = {};
+    /**
+     * Instanciation des principaux parametres
+     * 
+     * Permet de définir les bases du graph
+     * @param {string} color la couleur des lignes et des labels
+     * @param {boolean} yStartAtZero Si l'ordonnée (Y) doit ou non commencer à 0
+     * @param {boolean} yDisplayLines Si les lignes sur l'axe des ordonées doivent çetre dessinés
+     */
+    constructor(color, yStartAtZero, yDisplayLines) {
+        this.config.borderColor = color;
+        this.config.options = {};
+        this.config.options.responsive = true;
+        this.config.options.plugins = {};
+        this.config.options.plugins.legend = {};
+        this.config.options.plugins.legend.labels = {};
+        this.config.options.plugins.legend.labels.color = color;
+        this.config.options.plugins.title = {};
+        this.config.options.plugins.title.color = color;
+        this.config.options.scales = {};
+        this.config.options.scales.y = {};
+        this.config.options.scales.y.beginAtZero = yStartAtZero;
+        this.config.options.scales.y.grid = {};
+        this.config.options.scales.y.grid.borderColor = color;
+        this.config.options.scales.y.grid.color = color;
+        this.config.options.scales.y.grid.display = yDisplayLines;
+        this.config.options.scales.y.ticks = {};
+        this.config.options.scales.y.ticks.color = color;
+        this.config.options.scales.x = {};
+        this.config.options.scales.x.beginAtZero = true;
+        this.config.options.scales.x.grid = {};
+        this.config.options.scales.x.grid.borderColor = color;
+        this.config.options.scales.x.ticks = {};
+        this.config.options.scales.x.ticks.color = color;
+    }
+
+    /**
+     * Ajoute un titre au graphique
+     * @param {string} title le titre du graphique
+     * @returns l'objet ConfigBuilder
+     */
+    withTitle(title) {
+        this.config.options.plugins.title.display = true;
+        this.config.options.plugins.title.text = title;
+        return this;
+    }
+
+    /**
+     * Ajoute un jeux de données au graphique
+     * @param {} data le jeu de donnée à ajouter
+     * @returns l'objet ConfigBuilder
+     */
+    withData(data) {
+        this.config.data = data;
+        return this;
+    }
+
+    /**
+     * Dessine une ligne horizontale sur le graphique
+     * @param {string} color la couleur de la ligne 
+     * @param {string} label le label a afficher sur la ligne
+     * @param {number} position la valeur ou placer la ligne 
+     * @param {boolean} labelEnabled si oui ou non on affiche le label
+     * @returns l'objet ConfigBuilder
+     */
+    withHorizontalLine(color, label, position, labelEnabled) {
+        this.config.options.plugins.annotation = {};
+        this.config.options.plugins.annotation.annotations = {};
+        this.config.options.plugins.annotation.annotations.line1 = {}
+        this.config.options.plugins.annotation.annotations.line1.type = "line";
+        this.config.options.plugins.annotation.annotations.line1.yMin = position;
+        this.config.options.plugins.annotation.annotations.line1.yMax = position;
+        this.config.options.plugins.annotation.annotations.line1.borderColor = color;
+        this.config.options.plugins.annotation.annotations.line1.borderWidth = 2;
+        this.config.options.plugins.annotation.annotations.line1.label = {};
+        this.config.options.plugins.annotation.annotations.line1.label.content = label;
+        this.config.options.plugins.annotation.annotations.line1.label.enabled = labelEnabled;
+
+        return this;
+    }
+
+    /**
+     * Dessine une ligne verticale sur le graphique
+     * @param {string} color la couleur de la ligne 
+     * @param {string} label le label a afficher sur la ligne
+     * @param {number} position la valeur ou placer la ligne 
+     * @param {boolean} labelEnabled si oui ou non on affiche le label
+     * @returns l'objet ConfigBuilder
+     */
+    withVerticalLine(color, label, position, labelEnabled) {
+        this.config.options.plugins.annotation = {};
+        this.config.options.plugins.annotation.annotations = {};
+        this.config.options.plugins.annotation.annotations.line1 = {}
+        this.config.options.plugins.annotation.annotations.line1.type = "line";
+        this.config.options.plugins.annotation.annotations.line1.xMin = position;
+        this.config.options.plugins.annotation.annotations.line1.xMax = position;
+        this.config.options.plugins.annotation.annotations.line1.borderColor = color;
+        this.config.options.plugins.annotation.annotations.line1.borderWidth = 2;
+        this.config.options.plugins.annotation.annotations.line1.label = {};
+        this.config.options.plugins.annotation.annotations.line1.label.content = label;
+        this.config.options.plugins.annotation.annotations.line1.label.enabled = labelEnabled;
+
+        return this;
+    }
+
+    /**
+     * 
+     * @param {string} type Definit un type de graphique (bar, piechart, line,...)
+     * @returns l'objet ConfigBuilder
+     */
+    withType(type) {
+        this.config.type = type;
+        return this;
+    }
+
+    /**
+     * Donne une certaine orientation au graphique
+     * @param {string} orientation l'orientation du graph (x ou y)
+     * @returns l'objet ConfigBuilder
+     */
+    withOrientation(orientation) {
+        this.config.options.indexAxis = orientation;
+        return this;
+    }
+
+    /**
+     * Definit la posiition de la légende
+     * @param {string} position le position de la légende (x, y)
+     * @returns l'objet ConfigBuilder
+     */
+    withLegendPosition(position) {
+        this.config.options.plugins.legend.position = position;
+        return this;
+    }
+
+    /**
+     * Permet "d'empiler" les graphiques pour qu'ils soient l'un sur l'autre
+     * @returns l'objet ConfigBuilder
+     */
+    stack() {
+        this.config.options.scales.y.stacked = true;
+        this.config.options.scales.x.stacked = true;
+        return this;
+    }
+
+    /**
+     * Permet d'effectivement créer la config chartJS demandée
+     * @returns La configuration utilisable par ChartJS
+     */
+    Build() {
+        return this.config;
+    }
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ChartConfigBuilder.html">ChartConfigBuilder</a></li></ul><h3>Global</h3><ul><li><a href="global.html#fevrierDays">fevrierDays</a></li><li><a href="global.html#getObjectifByMonth">getObjectifByMonth</a></li><li><a href="global.html#isBisextile">isBisextile</a></li><li><a href="global.html#turnIntToMonthString">turnIntToMonthString</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Fri Nov 19 2021 16:02:09 GMT+0100 (heure normale d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
