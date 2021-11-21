@@ -37,7 +37,7 @@
 
 
     <title>
-      Global
+      DataSetBuilder
     </title>
 
     <!--[if lt IE 9]>
@@ -112,7 +112,7 @@
     <div id="main" class="main-content">
       
       <h1 id='page-title' class="page-title">
-        Global
+        DataSetBuilder
       </h1>
       
 
@@ -124,20 +124,158 @@
 <section>
 
 
+<header>
+    
+        
+        <h2>
+        
+        DataSetBuilder
+        
+        </h2>
+        
+        
+    
+</header>
+
 
 <article>
     <div class="container-overview">
     
         
 
+    
+
+    <h4 class="name" id="DataSetBuilder">
+        <a href="#DataSetBuilder">#</a>
+        <span class="type-signature"></span>new DataSetBuilder<span class="signature">(type)</span><span class="type-signature"></span>
+    </h4>
+
+    
+
+
+
+    <div class="description">
+        <p>Crée un constructeur de DataSet, en prenant en compte le type de données</p>
+<p>Pour l'instant ne sont supporté que les type &quot;year&quot; et &quot;month&quot;</p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
         
 
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
 
-
-
-
+        <th>Type</th>
 
         
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>le type voulu (&quot;year&quot; = données pour un graph sur 12 mois glissant, &quot;month&quot; = données pour un graph sur le mois en cours)</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     </div>
 
@@ -161,9 +299,9 @@
 
     
 
-    <h4 class="name" id="fevrierDays">
-        <a href="#fevrierDays">#</a>
-        <span class="type-signature"></span>fevrierDays<span class="signature">()</span><span class="type-signature"></span>
+    <h4 class="name" id="addValue">
+        <a href="#addValue">#</a>
+        <span class="type-signature"></span>addValue<span class="signature">(associativeObject)</span><span class="type-signature"></span>
     </h4>
 
     
@@ -171,104 +309,7 @@
 
 
     <div class="description">
-        <p>Permet de connaitre le nombre de jours dans le mois de février de l'année courrante</p>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="method-member-container mt-20">
-    <strong>Returns:</strong>
-        
-            
-<div class="param-desc">
-    <p>Le nombre de jours de février de l'année en cours</p>
-</div>
-
-
-
-            
-    </div>
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="getObjectifByMonth">
-        <a href="#getObjectifByMonth">#</a>
-        <span class="type-signature"></span>getObjectifByMonth<span class="signature">(numMonth, dailyObjective)</span><span class="type-signature"></span>
-    </h4>
-
-    
-
-
-
-    <div class="description">
-        <p>Calcule l'objectif d'un mois en prenant en compte les différence de jours</p>
+        <p>Ajoute un objet de donnée à la volée</p>
     </div>
 
 
@@ -305,13 +346,13 @@
 
         <tr>
             
-                <td class="name"><code>numMonth</code></td>
+                <td class="name"><code>associativeObject</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">number</span>
+<span class="param-type">Object</span>
 
 
             
@@ -321,30 +362,7 @@
 
             
 
-            <td class="description last"><p>le numéro du mois pour lequel calculer</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>dailyObjective</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>l'objectif journalier</p></td>
+            <td class="description last"></td>
         </tr>
 
     
@@ -413,7 +431,7 @@
         
             
 <div class="param-desc">
-    <p>la multiplication de l'objectif par le nombre de mois</p>
+    <p>l'objet DatasetBuilder</p>
 </div>
 
 
@@ -429,153 +447,9 @@
 
     
 
-    <h4 class="name" id="isBisextile">
-        <a href="#isBisextile">#</a>
-        <span class="type-signature"></span>isBisextile<span class="signature">(year)</span><span class="type-signature"></span>
-    </h4>
-
-    
-
-
-
-
-
-
-
-
-
-
-
-    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
-        <strong>Parameters:</strong>
-        
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>year</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>l'annéee</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="method-member-container mt-20">
-    <strong>Returns:</strong>
-        
-            
-<div class="param-desc">
-    <p>true si l'année est bisextile, false sinon</p>
-</div>
-
-
-
-            
-    </div>
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="turnIntToMonthString">
-        <a href="#turnIntToMonthString">#</a>
-        <span class="type-signature"></span>turnIntToMonthString<span class="signature">(int)</span><span class="type-signature"></span>
+    <h4 class="name" id="build">
+        <a href="#build">#</a>
+        <span class="type-signature"></span>build<span class="signature">()</span><span class="type-signature"></span>
     </h4>
 
     
@@ -583,7 +457,104 @@
 
 
     <div class="description">
-        <p>Récupére le numéro d'un mois et retourne son écriture courte (1 =&gt; jan., 2 =&gt; fev., ... 12 =&gt; dec.)</p>
+        <p>Permet de construire l'objet Dataset utilisable par ChartJS</p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container mt-20">
+    <strong>Returns:</strong>
+        
+            
+<div class="param-desc">
+    <p>l'objet dataset utilisable par ChartJS</p>
+</div>
+
+
+
+            
+    </div>
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="calculateObjective">
+        <a href="#calculateObjective">#</a>
+        <span class="type-signature"></span>calculateObjective<span class="signature">(limit)</span><span class="type-signature"></span>
+    </h4>
+
+    
+
+
+
+    <div class="description">
+        <p>permet de déterminer un objectif - le premier élément si le graphique est au mois, la moyenne s'il est à l'année</p>
     </div>
 
 
@@ -620,13 +591,13 @@
 
         <tr>
             
-                <td class="name"><code>int</code></td>
+                <td class="name"><code>limit</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">number</span>
+<span class="param-type">Array.&lt;number></span>
 
 
             
@@ -636,7 +607,7 @@
 
             
 
-            <td class="description last"><p>le numéro du mois</p></td>
+            <td class="description last"><p>la liste des objectifs a ne pas depasser par mois/jour</p></td>
         </tr>
 
     
@@ -705,7 +676,622 @@
         
             
 <div class="param-desc">
-    <p>le nom court du mois</p>
+    <p>l'objectif à atteindre;</p>
+</div>
+
+
+
+            
+    </div>
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="harmonize">
+        <a href="#harmonize">#</a>
+        <span class="type-signature"></span>harmonize<span class="signature">(dataName)</span><span class="type-signature"></span>
+    </h4>
+
+    
+
+
+
+    <div class="description">
+        <p>Permet d'harmoniser les données ajoutées à la volée, ne fait rien si aucune donnée n'a été ajouté à la volée</p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>dataName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>le nom de la donée dans la légende</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container mt-20">
+    <strong>Returns:</strong>
+        
+            
+<div class="param-desc">
+    <p>l'objet DatasetBuilder</p>
+</div>
+
+
+
+            
+    </div>
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="withData">
+        <a href="#withData">#</a>
+        <span class="type-signature"></span>withData<span class="signature">(dataBrut, dataName)</span><span class="type-signature"></span>
+    </h4>
+
+    
+
+
+
+    <div class="description">
+        <p>permet d'ajouter des valeurs</p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>dataBrut</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;{date: number, value: number}></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>un tableau d'objet associant une date et une valeur (ex: {7, 3654})</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>dataName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>le nom de la donée dans la légende</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container mt-20">
+    <strong>Returns:</strong>
+        
+            
+<div class="param-desc">
+    <p>l'objet DatasetBuilder</p>
+</div>
+
+
+
+            
+    </div>
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="withLowerLimit">
+        <a href="#withLowerLimit">#</a>
+        <span class="type-signature"></span>withLowerLimit<span class="signature">(limit)</span><span class="type-signature"></span>
+    </h4>
+
+    
+
+
+
+    <div class="description">
+        <p>Défini un objectif à atteindre et colorie les données en vert si au dessus, en rouge sinon</p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>limit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;number></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>la liste des objectifs a ne pas depasser par mois/jour</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container mt-20">
+    <strong>Returns:</strong>
+        
+            
+<div class="param-desc">
+    <p>l'objet DatasetBuilder</p>
+</div>
+
+
+
+            
+    </div>
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="withUpperLimit">
+        <a href="#withUpperLimit">#</a>
+        <span class="type-signature"></span>withUpperLimit<span class="signature">(limit)</span><span class="type-signature"></span>
+    </h4>
+
+    
+
+
+
+    <div class="description">
+        <p>Défini un objectif à ne pas dépasser et colorie les données en vert si en dessous, en rouge sinon</p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>limit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;number></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>la liste des objectifs a ne pas depasser par mois/jour</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container mt-20">
+    <strong>Returns:</strong>
+        
+            
+<div class="param-desc">
+    <p>l'objet DatasetBuilder</p>
 </div>
 
 
